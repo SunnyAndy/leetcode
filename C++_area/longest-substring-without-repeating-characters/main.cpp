@@ -6,41 +6,85 @@ using namespace std;
 
 
 
-// * Definition for singly-linked list.
-
 
 class Solution{
 
   public:
-    int lengthOfLongestSubstring(string s) {
-    //  cout <<s.length()<<endl;
-      int  head=0;
-      int tail=head;
-      unsigned int max_length=0;
-      string sub_string="";
-      for  (int i=0; i< s.length();  i++){
-//	cout <<"at begining "<< sub_string<<endl;
-	if (sub_string.find(s[i]) != string::npos ){
-		while (sub_string.find(s[i]) !=string::npos){
-		  sub_string.erase(0,1);
-		}
-		sub_string +=s[i];
-//		cout<<"hit thanks "<< sub_string <<endl;
-		// while loop to operate the sub string 
-	}else{
-            sub_string +=s[i];
-	    if (sub_string.length() > max_length){
-		    max_length = sub_string.length();
-	    }else{
-		    max_length=max_length;
-	    }
+    string longestPalindrome (string s ){
+      string max_string="";
+      string temp_string="";
+
+      for (int i =0  ; i <s.length(); ++i){
+	int l=i;
+	int r=i;
+	while ( l  >=0   and  r<= s.length() ){
+	  if (s[l] == s[r]){
+	    l-=1;
+	    r+=1;
+	  } else {
+	    //    l+=1;
+	    //    r-=1;
+	    break;
+	  }
 	}
+	l+=1;
+	r-=1;
+
+	if (r-l+1> max_string.length()){
+	  max_string="";
+	  for (int j =l ;  j <=r ; j++){
+	    max_string += s[j];
+	  }
+	}
+	cout<<"max_string "<<max_string<<endl;	
 
       }
-  //    cout<<sub_string<<endl;
-   //   cout<< max_length<<endl;
-      
-      return max_length ;
+
+
+      for (int i=0 ; i < s.length()-1 ; ++i){
+	int l=i;
+	int r=i+1;
+	while ( l>= 0 and r<=s.length() ){
+	  if (s[l] == s[r]){
+	    l-=1;
+	    r+=1;
+	  } else {   
+	    break;    
+	  }
+	}
+	l+=1;
+	r-=1;
+	if (r-l+1 >max_string.length()){
+	  max_string="";
+	  for (int j=l; j<=r ; j++){
+	    max_string += s[j];
+	  }
+
+	  cout<< "max_string _even "<<max_string<<endl;
+	}
+      }
+
+
+
+
+
+      // an try for the string operation //
+      /*
+	 string result_string="";
+	 for (int  i=0  ; i<3 ; ++i){
+	 result_string += s[i];
+	 }
+
+	 cout <<result_string.length()<<"_";
+       */
+
+
+
+      string result="hello world";
+
+      return  max_string;
+
+
     }
 
 };
@@ -49,22 +93,10 @@ class Solution{
 
 
 int main (){
- 
-  class Solution my_sol;
 
-
-  cout <<my_sol.lengthOfLongestSubstring("abcabcbb")<<endl;
-  cout <<my_sol.lengthOfLongestSubstring("bbbbbbbb")<<endl;
-  cout <<my_sol.lengthOfLongestSubstring("pwwkew")<<endl;
-
+  class Solution mysol;
+  cout<<mysol.longestPalindrome ("abaccfggfcc" );
   return 0;
-
-
-
-
-
-
-
 
 }
 
