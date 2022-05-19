@@ -28,8 +28,6 @@ class Solution{
 
       vector <string> queue;
       queue.push_back("");
-      int itt=digits[1]-'0'; 
-      cout<<itt<<endl;
       string temp;
       vector <string> working_set;
       for (int i =0 ; i < digits.length() ; ++i){
@@ -40,13 +38,11 @@ class Solution{
 	    string temp2="";
 	    temp2 = temp+it;
 	    working_set.push_back(temp2);
-	    //	    cout<<temp2<<endl;
 	  }
 	}
 	queue.swap(working_set);
       }
 
-      vector <string> b;
       return queue;
 
     }
