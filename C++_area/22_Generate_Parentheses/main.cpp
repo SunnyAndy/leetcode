@@ -5,10 +5,7 @@
 #include<algorithm>
 #include<queue>
 using namespace std;
-
-
 //  Definition for singly-linked list.
-
 class Solution {
   public:  
     int string_count( string data_in  , char symbol  ){
@@ -18,7 +15,6 @@ class Solution {
 	  count++;
 	}
       }
-
       return count;
     }
     vector<string> generateParenthesis(int n) {
@@ -26,27 +22,18 @@ class Solution {
       processing_list.push("");
       queue <string>  swap_list;
       string element;
-//      string A="Hello wolrd";
- //     char t='H';
- //     string_count(A, t);
-
       int len =processing_list.size();
-
-
       for (int j=0 ; j <n*2 ; j++){
 	len =processing_list.size();
 	for (int i =0; i <  len  ;  i ++){
 	  element = processing_list.front();
 	  element +="(";
 	  swap_list.push(element);
-//	  processing_list.push(element);
 	  element = processing_list.front();
 	  element +=")";
-//	  processing_list.push(element);
 	  swap_list.push(element);
 	  processing_list.pop();
 	}
-
 	len=swap_list.size();
 	for (int i=0 ; i < len ;  ++i){
 	  if (string_count (swap_list.front(),')' ) > string_count(  swap_list.front(), '(' )){
@@ -63,23 +50,14 @@ class Solution {
 
       }
       len = processing_list.size();
+      vector <string> temp; 
       for(int i =0 ; i < len  ; i++){
-
-	cout<<processing_list.front()<<endl;
+	temp.push_back(processing_list.front());
+//	cout<<processing_list.front()<<endl;
 	processing_list.pop();
       }
-
-
-
-
-      vector <string> temp; 
-      temp.push_back("Hello wolrd \n"); 
-
-
       return temp;
     }
-
-
 };
 
 
