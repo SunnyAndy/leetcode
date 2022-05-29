@@ -6,6 +6,7 @@
 #include<queue>
 using namespace std;
 //  Definition for singly-linked list.
+// it is BFS solution 
 class Solution {
   public:  
     int string_count( string data_in  , char symbol  ){
@@ -51,11 +52,13 @@ class Solution {
       }
       len = processing_list.size();
       vector <string> temp; 
+#ifdef DEBUG
       for(int i =0 ; i < len  ; i++){
 	temp.push_back(processing_list.front());
-//	cout<<processing_list.front()<<endl;
+	cout<<processing_list.front()<<endl;
 	processing_list.pop();
       }
+#endif
       return temp;
     }
 };
@@ -97,7 +100,7 @@ int main (){
    */
 
   class Solution sol;
-  //cout<< ( sol.generateParenthesis(2))[0] <<endl;
+//  cout<< ( sol.generateParenthesis(3))[0] <<endl;
   ( sol.generateParenthesis(3))  ;
   return 0;
 

@@ -25,29 +25,22 @@ class Solution {
 	      result +=Val[i];
 	      count=0;
 	    }
-
 	  }
-
 	  all_result[n]=result;
 	  return result;
 	}
 	else{
 	  return all_result[n];
 	}
-
       }
     }
 };
 
 int main (){
-
-
   class Solution sol;
-
   cout<< sol.countAndSay(7)<<endl;
   cout<< sol.countAndSay(6)<<endl;
   return 0;
-
 }
 
 

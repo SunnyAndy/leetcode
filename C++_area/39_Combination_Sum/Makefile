@@ -1,0 +1,12 @@
+ALL:main exe clean 
+main: main.o
+	@g++ -o a.out  main.o
+main.o:
+	@g++  -c main.cpp   -D DEBUG1
+
+exe:
+	@./a.out
+
+clean:
+	@rm *.o
+	@rm a.out
