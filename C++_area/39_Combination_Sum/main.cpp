@@ -31,7 +31,7 @@ class Solution {
       }
       int value=candidates[index];
       cur.push_back( value);
-      dfs(  candidates  , target , index , cur  , total+value  , res );
+      dfs( candidates, target , index , cur  , total+value  , res );
       cur.pop_back();
       index =index +1;
       dfs( candidates, target  , index , cur  , total , res  );
@@ -44,6 +44,7 @@ class Solution {
       res.clear();
       int total=0;
       int index=0;
+      std::sort(candidates.begin(), candidates.end());
       dfs(candidates, target  , index  , cur ,  total  , res   );
 #ifdef DEBUG
       for (int  i =0 ; i <res.size() ; i ++){
@@ -58,18 +59,9 @@ class Solution {
 };
 
 
-
-
-
-
 int main (){
   class Solution sol;
   vector <int> input={2,3,5};
   sol.combinationSum( input,  8 ) ;
-
-
-
   return 0;
 }
-
-
