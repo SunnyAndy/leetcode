@@ -12,7 +12,7 @@ class Solution
     void dfs (   vector < int >  arr   , int index  ,   vector <int> &cur , vector <int> &res  ){
       if (index==arr.size()){
 	res.push_back(accumulate(cur.begin(),cur.end(),0));
-	cout<<" index "<<index<<" sum " << res[res.size()-1]<<endl;
+//	cout<<" index "<<index<<" sum " << res[res.size()-1]<<endl;
 	return;
       }
       if (index <arr.size()){

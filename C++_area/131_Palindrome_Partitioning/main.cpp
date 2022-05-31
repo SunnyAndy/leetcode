@@ -72,17 +72,6 @@ int main (){
   //   cout<< sub_string<<endl;
 
 
-
-
-  /*
-     if(sol.is_palidom(s)){
-     cout<<"echo  \n";
-     }else  {
-     cout<<"not echo \n";
-     }*/
-
-
-
   return 0;
 }
 
