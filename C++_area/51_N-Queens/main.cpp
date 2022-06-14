@@ -9,33 +9,24 @@ class Solution {
   public:
     bool check_valid(int row , int col ,int n ,  vector <string> &cur){
 
-//      cout<<"row is "<<row<<" col is "<<col<<endl;
       if (row==0){
 	return true;
       }else{
 	for ( int r =0 ; r <row ; r++){
-//	  cout<<"  first "<<cur[r][col];
 	  if(cur[r][col]=='Q'){
 	    return false;
 	   }
 	}
-//	cout<<endl;
-	for (int i=col ; i >=col-row and i>=0;  i--){
-	  cout<<"seconde";
-	  cout<<row-(col-i)<<" , "<<i<<endl;
+	for (int i=col ; i >=col-row and i>=0;  i--){   // check for the direction <- and ^ 
 	  if(cur[row-(col-i)][i]=='Q'){
 	    return false;
 	  }
 	}
-//	cout<<endl;
-	for (int i =col;  i <= col+row  ;  i++){
-	  cout<<"third "<<endl;
-	  cout<<row-(i-col)<<" , "<<i<<endl;
+	for (int i =col;  i <= col+row  ;  i++){  // check for  the durection -> and ^ 
 	  if(cur[row-(i-col)][i]=='Q'){
 	    return false;
 	  }
 	}
-//	cout<<endl;
       }
       return true;
     }
@@ -77,8 +68,9 @@ class Solution {
       for (int  i =0 ; i <res.size() ; i ++){
 	for (int j=0 ;j <res[i].size(); j++){
 	  cout<<" "<<res[i][j]<<" ";
+	  cout<<endl;
 	}
-	cout<<endl;
+	cout<<"------------------------"<<endl;
       }
 #endif 
       return res;
