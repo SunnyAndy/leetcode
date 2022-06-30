@@ -21,9 +21,6 @@ class Solution {
       int mid= (head+tail)/2;
       int  index=-1;
       while(  tail>head  ){
-	cout<<"mid is "<<mid<<":"<<nums[mid]<<endl;
-	cout<<"tail "<<tail;
-	cout<<"head "<<head<<endl;
 	if ( nums[mid +1] == nums[mid]){
 	  index=mid ;
 	}
