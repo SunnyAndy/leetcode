@@ -1,0 +1,42 @@
+
+
+Input:
+N = 4
+A[] = {12,34,67,90}
+M = 2
+Output:113
+Explanation:Allocation can be done in
+following ways:{12} and {34, 67, 90}
+Maximum Pages = 191{12, 34} and {67, 90}
+Maximum Pages = 157{12, 34, 67} and {90}
+Maximum Pages =113. Therefore, the minimum
+of these cases is 113, which is selected
+as the output.
+
+
+
+
+
+Input:
+N = 3
+A[] = {15,17,20}
+M = 2
+Output:32
+Explanation: Allocation is done as
+{15,17} and {20}
+
+
+
+
+4
+10 16 25 7
+4
+
+Your Output:
+-1
+
+Expected Output:
+25
+
+Output Difference
+-1
