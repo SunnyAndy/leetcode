@@ -26,17 +26,11 @@ class Solution{
 	  q.pop();
 	}
       }
-
-
     vector<int> mergeKSortedArrays2(vector<vector<int>>&kArrays, int k){
-
-
       if (k==1){
 	return kArrays[0];
       }
       priority_queue <Node ,  vector <Node > ,  compare > min_heap2; 
-
-
       for (int i=0 ; i <k; i++){
 	struct  Node temp;
 	temp.value=kArrays[i][0];
@@ -49,7 +43,6 @@ class Solution{
 	cout<<min_heap2.top().value<<endl;
         min_heap2.pop();
       }
-
       vector <int> a;
       return a;
 */
@@ -67,8 +60,6 @@ class Solution{
 	  min_heap2.push(temp2);
 	}
       }
-
-
 
       /*
       while (!min_heap2.empty()){
