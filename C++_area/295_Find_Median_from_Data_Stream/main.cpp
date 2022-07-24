@@ -18,7 +18,7 @@ class MedianFinder  {
       }else {
 	max_heap.push(num);
       }
-
+      // organize the heap tree 
       if( min_heap.size() > max_heap.size()){
 	int n= min_heap.top();
 	min_heap.pop();
@@ -28,6 +28,7 @@ class MedianFinder  {
 	max_heap.pop();
 	min_heap.push(n);
       }
+
     }
 
     double findMedian(bool flag=false) {

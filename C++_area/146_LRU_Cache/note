@@ -1,0 +1,127 @@
+
+
+
+// the following doesn't work due to the vector will dynamic adjust the address which cause map pointing to an segmenta fault
+//**************************  not work for vector *****************************************//
+
+/*
+   int main(){
+   unordered_map<int,   vector <int>* > map;
+   vector < vector <int>> node;
+   vector<int> test={2,20};
+   node.push_back(test);
+
+
+   map[2]=&node[0];
+   cout<<(map[2])<<endl;
+   vector<int> test2={3,22222};
+   node.push_back(test2);
+
+   cout<<"value mape2 is "<<(*map[2])[1]<<endl;
+
+   printf("map[2]  %p \n" ,map[2] );
+   printf("node[0] %p \n" ,&node[0]);
+   printf("test %p \n" ,&test);
+
+   cout<<map[23];
+   return 0;
+   }
+ */
+// ***************************** end of vector method ***************************************
+
+
+
+
+// *************************** the following method cause violation of timing ****
+/*
+
+   class LRUCache_time_violation{
+   public:
+   unordered_map <int , bool> inside_check; // optimize for noe foor loop to find the data in the cache
+   vector <int> my_queue;
+   vector < vector <int  > >  mycache;
+   int max_len;
+   LRUCache_time_violation(int capacity) {
+   max_len=capacity;
+   vector <int> temp;
+   temp.push_back(-1);
+   temp.push_back(-1);
+   for (int i =0 ; i <capacity ; i++){
+   mycache.push_back(temp);
+   }
+   }
+   int  queue_hit(int key , vector <int > & my_queue   ){
+   for (int i=0 ; i < my_queue.size(); i++){
+   if (my_queue[i]==key){
+   return i;
+   }
+   }
+   return -1;
+   }
+   int get(int key) {
+   for (int i=0 ; i < mycache.size() ; i++){
+   if ( mycache[i][0]==key){
+   int index=queue_hit(key, my_queue);
+   if ( index >=0){
+   my_queue.erase(my_queue.begin()+index);
+   my_queue.insert( my_queue.begin() , key);
+// re arrange the queue
+}else{
+my_queue.insert(my_queue.begin() ,   key);
+}
+return mycache[i][1];
+}
+}
+return -1;
+}
+void put(int key, int value) {
+int index=queue_hit (key , my_queue);
+if (my_queue.size()== max_len){
+// evict the last used slot
+if(index>=0){
+for (int i=0 ; i < mycache.size() ; i++){
+if ( mycache[i][0]==key){
+mycache[i][1]=value;
+my_queue.erase(my_queue.begin()+index);
+my_queue.insert(my_queue.begin(), key);
+return;
+}
+}
+}else{
+int new_key=my_queue.back();
+my_queue.pop_back();
+// and put the new data in  mycache
+for (int i=0 ; i < mycache.size() ; i++){
+if ( mycache[i][0]==new_key){
+mycache[i][0]=key;
+mycache[i][1]=value;
+break;
+}
+}
+my_queue.insert(my_queue.begin(),  key);
+}
+
+}else{
+if (index >=0){
+for (int i=0 ; i < mycache.size() ; i++){
+if ( mycache[i][0]==key){
+  mycache[i][1]=value;
+  my_queue.erase(my_queue.begin()+index);
+  my_queue.insert(my_queue.begin(), key);
+  return;
+}
+}
+}else{
+  vector <int> temp={key, value};
+  mycache.push_back(temp);
+  my_queue.insert(my_queue.begin(), key);
+}
+}
+}
+
+};
+
+
+*/
+///////////////////// end of timing violation  method ////////
+
