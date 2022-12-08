@@ -35,7 +35,6 @@ class LRU_queue{
     del_node->prev->next=del_node->next;
     del_node->next->prev=del_node->prev;
 //    delete del_node;    
-
   }
 };
 
@@ -50,7 +49,7 @@ class LRUCache{
     }
     int get(int key) {
       if (my_cache.find(key)!=my_cache.end()){
-	int res=  (my_cache[key])->value;
+	int res=(my_cache[key])->value;
 //	struct node * new_node1 = lru_q.create_node(key, res);  //  should not new a one ?
 	struct node * new_node1 = my_cache[key];
 	lru_q.delete_node( new_node1 );
