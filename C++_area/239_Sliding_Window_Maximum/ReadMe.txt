@@ -5,7 +5,7 @@ https://leetcode.com/problems/sliding-window-maximum/
 
 
 
-the solution comes from the indian 
+the solution comes from the video 
 
 https://www.youtube.com/watch?v=CZQGRp93K4k&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=84 
 

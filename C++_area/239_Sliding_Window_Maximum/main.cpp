@@ -10,30 +10,30 @@ class Solution {
       std::deque<int> oper_q;
       int init_stat;
       for (int i=0 ; i <nums.size(); ++i){
-//	for(int j=i ; j<i+k ;  ++j){  
-	  while( !oper_q.empty() && (oper_q.front() <=  i-k )  ){   // clear the queue 
-	    oper_q.pop_front();
-	  }
-	  while (!oper_q.empty()){
-	    if (nums[oper_q.back()] < nums[i]){
-	      oper_q.pop_back();
-	    }else if (nums[oper_q.back()] >= nums[i]){
-	      oper_q.push_back(i);
-//	      result.push_back(nums[oper_q.front()]);
-	      break;
-	    }
-	  }
-	  if(oper_q.empty()){
+	//	for(int j=i ; j<i+k ;  ++j){  
+	while( !oper_q.empty() && (oper_q.front() <=  i-k )  ){   // clear the queue 
+	  oper_q.pop_front();
+	}
+	while (!oper_q.empty()){
+	  if (nums[oper_q.back()] < nums[i]){
+	    oper_q.pop_back();
+	  }else if (nums[oper_q.back()] >= nums[i]){
 	    oper_q.push_back(i);
-//	    result.push_back(nums[oper_q.front()]);
+	    //	      result.push_back(nums[oper_q.front()]);
+	    break;
 	  }
-//	}
+	}
+	if(oper_q.empty()){
+	  oper_q.push_back(i);
+	  //	    result.push_back(nums[oper_q.front()]);
+	}
+	//	}
 	if (i>=k-1 ){
-	result.push_back(nums[oper_q.front()]);
+	  result.push_back(nums[oper_q.front()]);
 	}
       }
       for(int i=0; i <result.size(); i++){
-		cout<<result[i]<<" ";
+	cout<<result[i]<<" ";
       }
       cout<<"\n";
       return result;
