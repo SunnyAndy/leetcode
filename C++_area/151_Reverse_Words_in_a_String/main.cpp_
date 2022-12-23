@@ -1,0 +1,77 @@
+// { Driver Code Starts
+// Initial template for C++
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+class Solution {
+  public:
+    string reverseWords(string s) {
+      int length=s.size();
+      string temp="";
+      stack <string> mystack;
+      int start=0;;
+      while(length!=0){
+	if(s[length-1]==0x20){
+	  if(temp!=""){
+	    mystack.push(temp);
+	    temp="";
+	  }
+	  length -=1;
+	  continue;
+	}else{
+	  temp =temp+s[length-1];
+	  length -=1;
+	}
+      } 
+
+
+      cout<<mystack.top();
+      mystack.pop();
+      cout<<mystack.top();
+
+      string  result="";
+      string target_str;
+      int stack_size=mystack.size();
+      int target_str_len;
+      for(int i= 0  ; i < stack_size; i ++){
+	target_str_len=mystack.top().size();
+	target_str=mystack.top();
+	mystack.pop();
+	while(target_str_len!=0){
+	  result += target_str[target_str_len-1];
+	  target_str_len -=1;
+	}
+	result +=" ";
+      }
+
+
+
+      cout<<result;
+
+
+
+
+      return s;
+
+    }
+}; 
+
+
+
+
+
+
+int main() {
+
+  class  Solution  answer;
+
+  string s=" hello world ";
+  cout<<s<<endl;
+  answer.reverseWords(s);
+
+
+  return 0;
+}  
+
